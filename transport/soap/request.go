@@ -2,24 +2,23 @@ package soap
 
 import (
 	"encoding/xml"
-	"time"
 )
 
 type Kso_Window_Input_Request struct {
-	XMLName xml.Name `xml:"http://heartbeat/assets/soap/kso/kso.proto/KsoSrv_types/ Kso_Window_Input"`
+	XMLName xml.Name `xml:"http://casing/api/pb/kso.proto/KsoSrv_types/ Kso_Window_Input"`
 
-	ClientID string `xml:"ClientId"`
+	AppID string `xml:"AppId"`
 }
 
 type Kso_Save_Event_Logs_Input_Request struct {
-	XMLName xml.Name `xml:"http://heartbeat/assets/soap/kso/kso.proto/KsoSrv_types/ Kso_Save_Event_Logs_Input"`
+	XMLName xml.Name `xml:"http://casing/api/pb/kso.proto/KsoSrv_types/ Kso_Save_Event_Logs_Input"`
 
-	ClientID string                  `xml:"ClientId"`
-	Events   []Kso_Event_Logs_Record `xml:"Events,omitempty"`
+	AppID  string                  `xml:"AppId"`
+	Events []Kso_Event_Logs_Record `xml:"Events,omitempty"`
 }
 
 type Kso_Event_Logs_Record struct {
-	Ts        time.Time `xml:"Ts,omitempty"`
-	EventName string    `xml:"EventName"`
-	EventData []byte    `xml:"EventData,omitempty"`
+	Ts        int64  `xml:"Ts"` // unix
+	EventName string `xml:"EventName"`
+	EventData string `xml:"EventData,omitempty"` // base64
 }

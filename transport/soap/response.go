@@ -2,15 +2,14 @@ package soap
 
 import (
 	"encoding/xml"
-	"time"
 )
 
 type Kso_Server_Output_Response struct {
-	XMLName xml.Name `xml:"http://heartbeat/assets/soap/kso/kso.proto/KsoSrv_types/ Kso_Server_Output"`
+	XMLName xml.Name `xml:"http://casing/api/pb/kso.proto/KsoSrv_types/ Kso_Server_Output"`
 
-	ClientID     string                     `xml:"-"`
-	LastWindowTs time.Time                  `xml:"LastWindowTs,omitempty"`
-	Actions      []Kso_Server_Action_Record `xml:"Actions,omitempty"`
+	AppID   string                     `xml:"-"`
+	EndTs   int64                      `xml:"EndTs,omitempty"` // unix
+	Actions []Kso_Server_Action_Record `xml:"Actions,omitempty"`
 }
 
 type ActionType int
@@ -23,5 +22,5 @@ const (
 
 type Kso_Server_Action_Record struct {
 	ActionType ActionType `xml:"ActionType"`
-	ActionData []byte     `xml:"ActionData,omitempty"`
+	ActionData string     `xml:"ActionData,omitempty"` // base64
 }
