@@ -17,13 +17,13 @@ type Conn struct {
 	rLock sync.Mutex
 }
 
-func NewConn(ctx context.Context, r io.Reader, w io.Writer) (*Conn, context.Context) {
+func NewConn(ctx context.Context, r io.Reader, w io.Writer) *Conn {
 	ctx, cancel := context.WithCancel(ctx)
 	return &Conn{
 		r:      r,
 		w:      w,
 		cancel: cancel,
-	}, ctx
+	}
 }
 
 // Writes to network stream.
