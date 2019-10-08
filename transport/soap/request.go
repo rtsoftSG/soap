@@ -4,20 +4,20 @@ import (
 	"encoding/xml"
 )
 
-type Kso_Open_Window_Request struct {
+type KsoOpenWindowRequest struct {
 	XMLName xml.Name `xml:"http://casing/api/pb/kso.proto/KsoSrv_types/ Kso_Open_Window_Input"`
 
 	AppID string `xml:"AppId"`
 }
 
-type Kso_Save_Event_Logs_Request struct {
+type KsoSaveEventLogsRequest struct {
 	XMLName xml.Name `xml:"http://casing/api/pb/kso.proto/KsoSrv_types/ Kso_Save_Event_Logs_Input"`
 
-	AppID  string                  `xml:"AppId"`
-	Events []Kso_Event_Logs_Record `xml:"Events,omitempty"`
+	AppID  string               `xml:"AppId"`
+	Events []KsoEventLogsRecord `xml:"Events,omitempty"`
 }
 
-type Kso_Event_Logs_Record struct {
+type KsoEventLogsRecord struct {
 	Ts        int64  `xml:"Ts"` // unix
 	EventName string `xml:"EventName"`
 	EventData string `xml:"EventData,omitempty"` // base64
