@@ -4,7 +4,7 @@ import (
 	"encoding/xml"
 )
 
-type Kso_Server_Output_Response struct {
+type Kso_Server_Response struct {
 	XMLName xml.Name `xml:"http://casing/api/pb/kso.proto/KsoSrv_types/ Kso_Server_Output"`
 
 	AppID   string                     `xml:"-"`

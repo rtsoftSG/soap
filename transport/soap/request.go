@@ -4,13 +4,13 @@ import (
 	"encoding/xml"
 )
 
-type Kso_Window_Input_Request struct {
-	XMLName xml.Name `xml:"http://casing/api/pb/kso.proto/KsoSrv_types/ Kso_Window_Input"`
+type Kso_Open_Window_Request struct {
+	XMLName xml.Name `xml:"http://casing/api/pb/kso.proto/KsoSrv_types/ Kso_Open_Window_Input"`
 
 	AppID string `xml:"AppId"`
 }
 
-type Kso_Save_Event_Logs_Input_Request struct {
+type Kso_Save_Event_Logs_Request struct {
 	XMLName xml.Name `xml:"http://casing/api/pb/kso.proto/KsoSrv_types/ Kso_Save_Event_Logs_Input"`
 
 	AppID  string                  `xml:"AppId"`
