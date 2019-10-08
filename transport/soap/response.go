@@ -7,7 +7,6 @@ import (
 type KsoServerResponse struct {
 	XMLName xml.Name `xml:"http://casing/api/pb/kso.proto/KsoSrv_types/ Kso_Server_Output"`
 
-	AppID   string                  `xml:"-"`
 	EndTs   int64                   `xml:"EndTs,omitempty"` // unix
 	Actions []KsoServerActionRecord `xml:"Actions,omitempty"`
 }
