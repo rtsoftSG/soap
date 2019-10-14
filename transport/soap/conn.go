@@ -1,7 +1,6 @@
 package soap
 
 import (
-	"context"
 	"io"
 	"sync"
 )
@@ -11,18 +10,14 @@ type Conn struct {
 	r io.Reader
 	w io.Writer
 
-	cancel context.CancelFunc
-
 	wLock sync.Mutex
 	rLock sync.Mutex
 }
 
-func NewConn(ctx context.Context, r io.Reader, w io.Writer) *Conn {
-	ctx, cancel := context.WithCancel(ctx)
+func NewConn(r io.Reader, w io.Writer) *Conn {
 	return &Conn{
-		r:      r,
-		w:      w,
-		cancel: cancel,
+		r: r,
+		w: w,
 	}
 }
 
@@ -42,6 +37,5 @@ func (c *Conn) Read(data []byte) (int, error) {
 
 // Closes network stream.
 func (c *Conn) Close() error {
-	c.cancel()
 	return nil
 }
