@@ -5,13 +5,13 @@ import (
 )
 
 type KsoOpenWindowRequest struct {
-	XMLName xml.Name `xml:"http://casing/api/pb/kso.proto/KsoSrv_types/ Kso_Open_Window_Input"`
+	XMLName xml.Name `xml:"http://casing/api/pb/kso.proto/KsoSrv_types/ Kso_Open_Window_Request"`
 
 	AppID string `xml:"AppId"`
 }
 
 type KsoSaveEventLogsRequest struct {
-	XMLName xml.Name `xml:"http://casing/api/pb/kso.proto/KsoSrv_types/ Kso_Save_Event_Logs_Input"`
+	XMLName xml.Name `xml:"http://casing/api/pb/kso.proto/KsoSrv_types/ Kso_Save_Event_Logs_Request"`
 
 	AppID  string               `xml:"AppId"`
 	Events []KsoEventLogsRecord `xml:"Events,omitempty"`

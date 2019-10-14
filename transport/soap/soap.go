@@ -27,7 +27,6 @@ func (b *Body) UnmarshalXML(d *xml.Decoder, _ xml.StartElement) error {
 		consumed bool
 	)
 
-Loop:
 	for {
 		if token, err = d.Token(); err != nil {
 			return err
@@ -59,7 +58,7 @@ Loop:
 				consumed = true
 			}
 		case xml.EndElement:
-			break Loop
+			return nil
 		}
 	}
 
