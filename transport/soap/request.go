@@ -22,3 +22,16 @@ type KsoEventLogsRecord struct {
 	EventName string `xml:"EventName"`
 	EventData string `xml:"EventData,omitempty"` // base64
 }
+
+type SavePackageCntRequest struct {
+	XMLName xml.Name `xml:"http://casing/api/pb/kso.proto/KsoSrv_types/ Save_Package_Cnt_Request"`
+
+	AppID string             `xml:"AppId"`
+	Pkg   []PackageCntRecord `xml:"Pkg,omitempty"`
+}
+
+type PackageCntRecord struct {
+	Ts      int64  `xml:"Ts"` // unix
+	ActorId string `xml:"ActorId"`
+	Cnt     int    `xml:"Cnt,omitempty"`
+}
