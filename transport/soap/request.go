@@ -59,11 +59,21 @@ type SaveCalcResultsRequest struct {
 	XMLName xml.Name `xml:"http://casing/api/pb/kso.proto/KsoSrv_types/ Kso_Save_Calc_Results_Request"`
 
 	AppID    string              `xml:"AppId"`
-	CalcType string              `xml:"CalcType"`
+	CalcName string              `xml:"CalcName"`
 	CalcRes  []CalcResultsRecord `xml:"CalcRes"`
 }
 
 type CalcResultsRecord struct {
-	Ts       int64  `xml:"Ts"`       // unix
-	CalcData string `xml:"CalcData"` // base64
+	Ts  int64   `xml:"Ts"` // unix
+	Ua  float32 `xml:"Ua"`
+	Ub  float32 `xml:"Ub"`
+	Uc  float32 `xml:"Uc"`
+	Uab float32 `xml:"Uab"`
+	Ubc float32 `xml:"Ubc"`
+	Uca float32 `xml:"Uca"`
+	Ia  float32 `xml:"Ia"`
+	Ib  float32 `xml:"Ib"`
+	Ic  float32 `xml:"Ic"`
+	Pa  float32 `xml:"Pa"`
+	Qd  int     `xml:"Qd"`
 }
