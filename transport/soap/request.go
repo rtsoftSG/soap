@@ -40,7 +40,7 @@ type SaveMetaInfoRequest struct {
 	XMLName xml.Name `xml:"http://casing/api/pb/kso.proto/KsoSrv_types/ Kso_Save_Meta_Info_Request"`
 
 	AppID string       `xml:"AppId"`
-	Meta  []DataRecord `xml:"Meta"`
+	Info  []DataRecord `xml:"Info"`
 }
 
 type SaveSysMonitorRequest struct {
