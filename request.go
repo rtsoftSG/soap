@@ -31,9 +31,9 @@ type SavePackageCntRequest struct {
 }
 
 type PackageCntRecord struct {
-	Ts      int64  `xml:"Ts"` // unix
-	ActorId string `xml:"ActorId"`
-	Cnt     int    `xml:"Cnt"`
+	Ts        int64  `xml:"Ts"` // unix
+	ActorName string `xml:"ActorName"`
+	Cnt       int    `xml:"Cnt"`
 }
 
 type SaveMetaInfoRequest struct {
@@ -64,16 +64,7 @@ type SaveCalcResultsRequest struct {
 }
 
 type CalcResultsRecord struct {
-	Ts  int64   `xml:"Ts"` // unix
-	Ua  float32 `xml:"Ua"`
-	Ub  float32 `xml:"Ub"`
-	Uc  float32 `xml:"Uc"`
-	Uab float32 `xml:"Uab"`
-	Ubc float32 `xml:"Ubc"`
-	Uca float32 `xml:"Uca"`
-	Ia  float32 `xml:"Ia"`
-	Ib  float32 `xml:"Ib"`
-	Ic  float32 `xml:"Ic"`
-	Pa  float32 `xml:"Pa"`
-	Qd  int     `xml:"Qd"`
+	Ts   int64  `xml:"Ts"`   // unix
+	Data string `xml:"Data"` // base64
+	Qd   int    `xml:"Qd"`
 }
