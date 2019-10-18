@@ -58,13 +58,13 @@ type DataRecord struct {
 type SaveCalcResultsRequest struct {
 	XMLName xml.Name `xml:"http://casing/api/pb/kso.proto/KsoSrv_types/ Kso_Save_Calc_Results_Request"`
 
-	AppID    string              `xml:"AppId"`
-	CalcName string              `xml:"CalcName"`
-	CalcRes  []CalcResultsRecord `xml:"CalcRes"`
+	AppID   string              `xml:"AppId"`
+	CalcRes []CalcResultsRecord `xml:"CalcRes"`
 }
 
 type CalcResultsRecord struct {
-	Ts   int64  `xml:"Ts"`   // unix
-	Data string `xml:"Data"` // base64
-	Qd   int    `xml:"Qd"`
+	Ts       int64  `xml:"Ts"` // unix
+	CalcName string `xml:"CalcName"`
+	Data     string `xml:"Data"` // base64
+	Qd       int    `xml:"Qd"`
 }
